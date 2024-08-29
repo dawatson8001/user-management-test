@@ -47,4 +47,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get cleaned up User data for API response
+     * Change field names to hide db fields
+     * Format datetime to readable format
+     */
+    public function getCleanUserData(): object
+    {
+
+        $cleanUser = (object) array();
+        $cleanUser->forename = $this->first_name;
+        $cleanUser->surname = $this->last_name;
+        $cleanUser->emailAddress = $this->email;
+        $cleanUser->userLevel = $this->user_type;
+        $cleanUser->creationDatetime = $this->created_at->format("d/m/Y H:i");
+
+        return $cleanUser;
+    }
 }

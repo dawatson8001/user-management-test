@@ -22,7 +22,7 @@ class ListUsers extends Component
         $users = User::select("id", "first_name", "last_name", "user_type", "email", "last_login", "created_at")
         ->when($this->search, function($query, $search) {
             return $query->where(function($query) use ($search) {
-                $query->where("fisrt_name", "LIKE", "%$search%")
+                $query->where("first_name", "LIKE", "%$search%")
                       ->orWhere("last_name", "LIKE", "%$search%")
                       ->orWhere("email", "LIKE", "%$search%");
             });

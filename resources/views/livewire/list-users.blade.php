@@ -4,7 +4,7 @@
         <div class="grid grid-cols-12">
             <div class="col-span-4 filter-box">
             <label for="search" class="filter">Search</label>
-                <input id="search" wire:model.live.delay.longest="search" type="text" class="filter" placeholder="Search for Email or Name">
+                <input id="search" wire:model.live.delay.long="search" type="text" class="filter" placeholder="Search for Email or Name">
             </div>
             <div class="col-span-2 filter-box">
                 <label for="user_type" class="filter">User Type</label>
